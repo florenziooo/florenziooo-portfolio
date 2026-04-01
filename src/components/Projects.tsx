@@ -1,8 +1,23 @@
+import { useState, useEffect } from "react";
 import wildcatsDenLogo from "./logos/den_logo.png";
 import shakeLogo from "./logos/shake_logo.png";
 import linawLogo from "./logos/linaw_logo.png";
 import token42Logo from "./logos/token42_logo.png";
 import quizmoLogo from "./logos/quizmo_logo.png";
+
+import UPAwarding from "./images/UP_awarding.jpg";
+import UPCert from "./images/UP_cert.jpg";
+import shakeAwarding from "./images/shake_awarding.jpg";
+import shakeCert from "./images/shake_cert.jpg";
+import shakeTop5 from "./images/shake_top5.jpg";
+import polkadotAwarding from "./images/polkadot_awarding.jpeg";
+import polkadotCert from "./images/polkadot_cert.jpeg";
+
+const projectImages: Record<string, string[]> = {
+  Linaw: [UPAwarding, UPCert],
+  SHAKE: [shakeAwarding, shakeCert, shakeTop5],
+  Token42: [polkadotAwarding, polkadotCert],
+};
 
 const projects = [
   {
@@ -15,6 +30,7 @@ const projects = [
     chipColor: "text-electric-yellow",
     logo: linawLogo,
     opacity: 30,
+    github: "https://github.com/florenziooo/Linaw",
   },
   {
     tag: "Top 5",
@@ -26,6 +42,7 @@ const projects = [
     chipColor: "text-sky-accent",
     logo: shakeLogo,
     opacity: 20,
+    github: "https://github.com/florenziooo/SHAKE",
   },
   {
     tag: "2nd Runner Up",
@@ -37,6 +54,7 @@ const projects = [
     chipColor: "text-hot-pink",
     logo: token42Logo,
     opacity: 20,
+    github: "https://github.com/florenziooo/Token42",
   },
   {
     tag: "Game Dev",
@@ -48,6 +66,7 @@ const projects = [
     chipColor: "text-lime",
     logo: wildcatsDenLogo,
     opacity: 10,
+    github: "https://github.com/florenziooo/Wildcats-Den",
   },
   {
     tag: "EdTech",
@@ -59,10 +78,27 @@ const projects = [
     chipColor: "text-[oklch(0.7_0.22_30)]",
     logo: quizmoLogo,
     opacity: 30,
+    github: "https://github.com/florenziooo/QuizMo",
   },
 ];
 
 export default function Projects() {
+  const [selectedProject, setSelectedProject] = useState<string | null>(null);
+  const [currentImageIdx, setCurrentImageIdx] = useState(0);
+
+  useEffect(() => {
+    if (!selectedProject || !projectImages[selectedProject]) return;
+    
+    // Pick a random image initially or just start from 0
+    const randomInitial = Math.floor(Math.random() * projectImages[selectedProject].length);
+    setCurrentImageIdx(randomInitial);
+    
+    const interval = setInterval(() => {
+      setCurrentImageIdx(Math.floor(Math.random() * projectImages[selectedProject].length));
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [selectedProject]);
+
   return (
     <section id="projects" className="py-20 px-5">
       <div className="px-10 mb-12 flex items-end justify-between flex-wrap gap-5 max-md:px-5">
@@ -90,29 +126,78 @@ export default function Projects() {
                 className={`absolute inset-0 w-full h-full object-cover opacity-${p.opacity} pointer-events-none mix-blend-overlay select-none`}
               />
               
-              <div className="relative z-10">
-                <span className={`text-[0.62rem] tracking-[0.15em] uppercase px-2.5 py-1 rounded-full border border-current ${p.chipColor}`}>
-                  {p.tag}
-                </span>
-                <h3 className="font-display text-4xl text-cream tracking-wide mt-6 mb-3 leading-none">
-                  {p.name}
-                </h3>
-                <p className="text-[0.75rem] text-cream/45 leading-relaxed mb-4">
-                  {p.desc}
-                </p>
-              </div>
-              <div className="relative z-10">
-                <div className="text-[0.75rem] text-cream/70 tracking-[0.15em] uppercase mb-4">
-                  {p.award}
+              <div className="relative z-10 flex flex-col justify-between h-full">
+                <div>
+                  <span className={`text-[0.62rem] tracking-[0.15em] uppercase px-2.5 py-1 rounded-full border border-current ${p.chipColor}`}>
+                    {p.tag}
+                  </span>
+                  <h3 className="font-display text-4xl text-cream tracking-wide mt-6 mb-3 leading-none">
+                    {p.name}
+                  </h3>
+                  <p className="text-[0.75rem] text-cream/45 leading-relaxed mb-4">
+                    {p.desc}
+                  </p>
                 </div>
-                <button className="bg-hot-pink text-primary-foreground px-5 py-2.5 rounded-xl cursor-pointer font-display text-base tracking-[0.1em] hover:scale-105 hover:bg-[oklch(0.6_0.3_350)] transition-transform">
-                  VIEW →
-                </button>
+                <div>
+                  <div className="text-[0.75rem] text-cream/70 tracking-[0.15em] uppercase mb-4">
+                    {p.award}
+                  </div>
+                  <div className="flex gap-3">
+                    {projectImages[p.name] && (
+                      <button 
+                        onClick={(e) => {
+                          e.preventDefault();
+                          setSelectedProject(p.name);
+                        }}
+                        className="bg-hot-pink text-primary-foreground px-5 py-2.5 rounded-xl cursor-pointer font-display text-base tracking-[0.1em] hover:scale-105 hover:bg-[oklch(0.6_0.3_350)] transition-transform flex-1 text-center"
+                      >
+                        VIEW →
+                      </button>
+                    )}
+                    <a 
+                      href={p.github} 
+                      target="_blank" 
+                      rel="noreferrer" 
+                      className="border-[1.5px] border-cream/25 text-cream px-4 py-2.5 rounded-xl font-display tracking-[0.12em] text-sm hover:border-electric-yellow hover:text-electric-yellow transition-colors flex items-center justify-center flex-shrink-0"
+                    >
+                      GITHUB ↗
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           ))}
         </div>
       </div>
+
+      {/* Modal Slideshow */}
+      {selectedProject && projectImages[selectedProject] && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-background/80 backdrop-blur-md">
+          <div className="relative w-full max-w-5xl rounded-[2rem] overflow-hidden shadow-[0_0_80px_oklch(0.65_0.28_350/25%)] border border-white/10 h-[70vh] max-h-[800px] flex">
+            {/* Close Button */}
+            <button
+              onClick={() => setSelectedProject(null)}
+              className="absolute top-5 right-5 z-50 bg-black/40 hover:bg-black/80 text-cream w-12 h-12 flex items-center justify-center rounded-full backdrop-blur-md transition-all text-xl border border-white/20"
+            >
+              ✕
+            </button>
+            <div className="relative w-full h-full bg-black flex items-center justify-center">
+              {projectImages[selectedProject].map((img, idx) => (
+                <img
+                  key={idx}
+                  src={img}
+                  alt={`${selectedProject} screenshot`}
+                  className={`absolute inset-0 w-full h-full object-contain transition-all duration-1000 ease-in-out ${
+                    idx === currentImageIdx ? "opacity-100 scale-100 z-10" : "opacity-0 scale-105 z-0"
+                  }`}
+                />
+              ))}
+            </div>
+            {/* Overlay gradient at bottom for aesthetics */}
+            <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-black/80 to-transparent z-40 pointer-events-none" />
+          </div>
+        </div>
+      )}
     </section>
   );
 }
