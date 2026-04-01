@@ -1,18 +1,30 @@
 import { createFileRoute } from "@tanstack/react-router";
+import Ticker from "@/components/Ticker";
+import Navbar from "@/components/Navbar";
+import Hero from "@/components/Hero";
+import StatsStrip from "@/components/StatsStrip";
+import Projects from "@/components/Projects";
+import Skills from "@/components/Skills";
+import Education from "@/components/Education";
+import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 
 export const Route = createFileRoute("/")({
   component: Index,
 });
 
-// IMPORTANT: Fully REPLACE this with your own code
-function PlaceholderIndex() {
+function Index() {
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
+    <div className="min-h-screen bg-background text-foreground">
+      <Ticker />
+      <Navbar />
+      <Hero />
+      <StatsStrip />
+      <Projects />
+      <Skills />
+      <Education />
+      <Contact />
+      <Footer />
     </div>
   );
-}
-
-function Index() {
-  return <PlaceholderIndex />;
 }
