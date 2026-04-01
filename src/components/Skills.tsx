@@ -54,7 +54,7 @@ export default function Skills() {
         {categories.map((c) => (
           <div
             key={c.name}
-            className="bg-surface p-7 relative overflow-hidden group hover:bg-[oklch(0.24_0.02_280)] transition-colors"
+            className="bg-surface p-7 relative overflow-hidden group hover:bg-[oklch(0.24_0.02_280)] transition-colors cursor-pointer"
           >
             <div className={`absolute bottom-0 left-0 h-0.5 w-0 group-hover:w-full ${c.color} transition-all duration-500`} />
             <div className="font-display text-sm tracking-[0.2em] text-cream/20 mb-2">
@@ -68,7 +68,7 @@ export default function Skills() {
             </div>
           </div>
         ))}
-        <div className="bg-surface p-7 flex flex-col justify-center items-center text-center group hover:bg-[oklch(0.24_0.02_280)] transition-colors">
+        <div className="bg-surface p-7 flex flex-col justify-center items-center text-center group hover:bg-[oklch(0.24_0.02_280)] transition-colors cursor-pointer">
           <div className="font-display text-3xl text-cream leading-none mb-2">
             And it's
             <br />

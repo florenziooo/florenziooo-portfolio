@@ -50,7 +50,7 @@ export default function Education() {
             ].map((c) => (
               <div
                 key={c.cert}
-                className="bg-surface border border-border rounded-2xl p-5 hover:bg-[oklch(0.24_0.02_280)] transition-colors"
+                className="bg-surface border border-border rounded-2xl p-5 hover:bg-[oklch(0.24_0.02_280)] transition-colors cursor-pointer"
               >
                 <div className="font-display text-xl text-cream tracking-wide">
                   {c.cert}
