@@ -30,7 +30,7 @@ const projects = [
     chipColor: "text-electric-yellow",
     logo: linawLogo,
     opacity: 30,
-    github: "https://github.com/florenziooo/Linaw",
+    github: "https://github.com/GReturn/Linaw",
   },
   {
     tag: "Top 5",
@@ -42,19 +42,19 @@ const projects = [
     chipColor: "text-sky-accent",
     logo: shakeLogo,
     opacity: 20,
-    github: "https://github.com/florenziooo/SHAKE",
+    github: "https://github.com/GReturn/Shake",
   },
   {
     tag: "2nd Runner Up",
     name: "Token42",
-    desc: "Next-gen dating platform solving the Trust Gap with Polkadot's verifiable identity and AI-powered matching in secure enclaves.",
+    desc: "Next-gen dating platform solving the Trust Gap with Polkadot's verifiable identity and AI-powered matching in secure enclaves. This is my exploration in the web3 space as I have a course in the curriculum.",
     award: "Polkadot Solidity Hackathon 2026",
     gradient: "from-[#38001e] to-[#280015]",
     border: "border-[oklch(0.65_0.28_350/35%)]",
     chipColor: "text-hot-pink",
     logo: token42Logo,
     opacity: 20,
-    github: "https://github.com/florenziooo/Token42",
+    github: "https://github.com/GReturn/Project-Token42",
   },
   {
     tag: "Game Dev",
@@ -66,7 +66,7 @@ const projects = [
     chipColor: "text-lime",
     logo: wildcatsDenLogo,
     opacity: 10,
-    github: "https://github.com/florenziooo/Wildcats-Den",
+    github: "https://github.com/florenziooo/CAPSTONE-libgdx",
   },
   {
     tag: "EdTech",
@@ -78,7 +78,7 @@ const projects = [
     chipColor: "text-[oklch(0.7_0.22_30)]",
     logo: quizmoLogo,
     opacity: 30,
-    github: "https://github.com/florenziooo/QuizMo",
+    github: "https://github.com/Keloyys/CCP",
   },
 ];
 
