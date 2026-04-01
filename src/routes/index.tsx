@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import StatsStrip from "@/components/StatsStrip";
 import Projects from "@/components/Projects";
+import About from "@/components/About";
 import Skills from "@/components/Skills";
 import Education from "@/components/Education";
 import Contact from "@/components/Contact";
@@ -19,6 +20,7 @@ function Index() {
       <Ticker />
       <Navbar />
       <Hero />
+      <About />
       <StatsStrip />
       <Projects />
       <Skills />
