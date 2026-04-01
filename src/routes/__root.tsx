@@ -31,16 +31,13 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Gil Florenz Sastre — Developer Portfolio" },
+      { name: "description", content: "CS student, hackathon champion, builder of things that slap. Portfolio of Gil Florenz J. Sastre." },
+      { name: "author", content: "Gil Florenz J. Sastre" },
+      { property: "og:title", content: "Gil Florenz Sastre — Developer Portfolio" },
+      { property: "og:description", content: "CS student, hackathon champion, builder of things that slap." },
       { property: "og:type", content: "website" },
-      { property: "og:image", content: "https://lovable.dev/opengraph-image-p98pqg.png" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
-      { name: "twitter:image", content: "https://lovable.dev/opengraph-image-p98pqg.png" },
     ],
     links: [
       {
