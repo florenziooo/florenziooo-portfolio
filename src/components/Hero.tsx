@@ -1,3 +1,5 @@
+import profile4 from "./images/profile4.png";
+
 export default function Hero() {
   return (
     <section className="relative min-h-[80vh] flex items-center px-15 py-12 overflow-hidden max-md:px-5 max-md:py-8">
@@ -76,6 +78,15 @@ export default function Hero() {
             </div>
           ))}
         </div>
+      </div>
+
+      {/* Profile Image (Bottom Right) */}
+      <div className="absolute right-10 bottom-0 h-full hidden lg:block z-0 pointer-events-none">
+        <img
+          src={profile4}
+          alt="Gil Florenz Profile"
+          className="h-full w-auto object-contain object-bottom drop-shadow-[0_0_80px_oklch(0.65_0.28_350/25%)] opacity-90"
+        />
       </div>
     </section>
   );
