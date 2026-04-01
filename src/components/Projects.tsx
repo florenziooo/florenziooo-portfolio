@@ -1,8 +1,8 @@
-import wildcatsDenLogo from "./images/den_logo.png";
-import shakeLogo from "./images/shake_logo.png";
-import linawLogo from "./images/linaw_logo.png";
-import token42Logo from "./images/token42_logo.png";
-import quizmoLogo from "./images/quizmo_logo.png";
+import wildcatsDenLogo from "./logos/den_logo.png";
+import shakeLogo from "./logos/shake_logo.png";
+import linawLogo from "./logos/linaw_logo.png";
+import token42Logo from "./logos/token42_logo.png";
+import quizmoLogo from "./logos/quizmo_logo.png";
 
 const projects = [
   {
