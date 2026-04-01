@@ -14,9 +14,14 @@ export default function Education() {
             <br />
             <span className="text-electric-yellow">REPEAT.</span>
           </h3>
-          <p className="text-[0.76rem] text-cream/45 leading-relaxed mb-6">
-            Currently pursuing a BS in Computer Science at the Cebu Institute of Technology — University (2023–present). Active member of Google Developer Groups on Campus.
-          </p>
+          <div className="text-[0.8rem] text-cream/50 leading-relaxed space-y-4 mb-8">
+            <p>
+              I began my academic journey at the Bato School of Fisheries, where I consistently achieved honors and served as Vice President of the Supreme Student Government and Editor-in-Chief of The Bato Angler.
+            </p>
+            <p>
+              Today, I am pursuing a Bachelor of Science in Computer Science at Cebu Institute of Technology – University. Through courses such as Data Structures and Algorithms, Object-Oriented Programming, Design Analysis, and Automata Theory, I continue developing the analytical thinking and technical foundations needed to design efficient and reliable systems.
+            </p>
+          </div>
           <ul className="flex flex-col gap-3.5">
             {[
               "DevFest Cebu 2024 — Google Developer Groups",
