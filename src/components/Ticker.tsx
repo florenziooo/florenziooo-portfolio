@@ -1,16 +1,16 @@
 export default function Ticker() {
   const words = [
-    { text: "GIL", color: "text-hot-pink" },
-    { text: "FLORENZ", color: "text-electric-yellow" },
-    { text: "SASTRE", color: "text-cream/25" },
+    { text: "florenziooo", color: "text-hot-pink" },
+    { text: "gilflorenz.sastre@cit.edu", color: "text-electric-yellow" },
+    { text: "frezkieflorenz@gmail.com", color: "text-cream/25" },
     { text: "✦", color: "text-hot-pink/50" },
-    { text: "DEVELOPER", color: "text-hot-pink" },
-    { text: "HACKATHON", color: "text-electric-yellow" },
-    { text: "WINNER", color: "text-cream/25" },
+    { text: "+63 966 075 5229", color: "text-hot-pink" },
+    { text: "florenziooo", color: "text-electric-yellow" },
+    { text: "gilflorenz.sastre@cit.edu", color: "text-cream/25" },
     { text: "✦", color: "text-hot-pink/50" },
-    { text: "CS", color: "text-hot-pink" },
-    { text: "STUDENT", color: "text-electric-yellow" },
-    { text: "CIT-U", color: "text-cream/25" },
+    { text: "frezkieflorenz@gmail.com", color: "text-hot-pink" },
+    { text: "+63 966 075 5229", color: "text-electric-yellow" },
+    { text: "florenziooo", color: "text-cream/25" },
     { text: "✦", color: "text-hot-pink/50" },
   ];
 

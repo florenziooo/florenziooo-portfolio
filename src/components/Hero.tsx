@@ -1,6 +1,6 @@
 export default function Hero() {
   return (
-    <section className="relative min-h-[80vh] flex items-center px-10 py-12 overflow-hidden max-md:px-5 max-md:py-8">
+    <section className="relative min-h-[80vh] flex items-center px-15 py-12 overflow-hidden max-md:px-5 max-md:py-8">
       {/* Grid overlay */}
       <div className="absolute inset-0 grid-overlay pointer-events-none" />
       {/* Blobs */}
@@ -24,16 +24,16 @@ export default function Hero() {
           <span className="text-electric-yellow">SASTRE</span>
         </h1>
 
-        <p className="text-[0.82rem] text-cream/50 leading-relaxed max-w-sm mt-4 mb-6">
+        <p className="text-[1rem] text-cream/50 leading-relaxed max-w-lg mt-4 mb-6">
           BS Computer Science student at CIT-U. Hackathon champion. Building things that slap — from AI reading companions to blockchain dating platforms.
         </p>
 
         {/* Skill pills */}
         <div className="flex flex-wrap gap-2 mb-7">
-          {["Python", "TypeScript", "Java", "C++", "Django", "Tailwind", "Kotlin"].map((s) => (
+          {["BSCS", "DOST-SEI Scholar", "Top 1 Parangal Awardee 2023"].map((s) => (
             <span
               key={s}
-              className="text-[0.62rem] tracking-[0.08em] px-3 py-1.5 rounded-full border border-cream/15 text-cream/45 uppercase hover:border-hot-pink hover:text-hot-pink transition-colors"
+              className="text-[0.8rem] tracking-[0.08em] px-3 py-1.5 rounded-full border border-cream/15 text-cream/45 uppercase hover:border-hot-pink hover:text-hot-pink transition-colors"
             >
               {s}
             </span>

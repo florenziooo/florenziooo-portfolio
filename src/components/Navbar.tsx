@@ -1,8 +1,8 @@
 export default function Navbar() {
   return (
-    <nav className="flex items-center justify-between px-10 py-5 relative z-10 max-md:px-5 max-md:py-4">
+    <nav className="flex items-center justify-between px-15 py-5 relative z-10 max-md:px-5 max-md:py-4">
       <a href="#" className="font-display text-2xl text-electric-yellow tracking-wide">
-        GIL.DEV 🚀
+        FLORENZIOOO
       </a>
       <ul className="flex items-center gap-8 list-none max-md:gap-4">
         <li className="max-md:hidden">
