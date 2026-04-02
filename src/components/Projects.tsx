@@ -24,7 +24,7 @@ const projects = [
   {
     tag: "Best Technical Execution",
     name: "Linaw",
-    desc: "AI-powered reading companion that explains complex English terms in Philippine languages through localized understanding.",
+    desc: "An innovative AI platform designed to help students grasp complex concepts in the languages they naturally think in, bridging the comprehension gap in education, personally, visually, and intimately.",
     award: "UP Innovation Cup Cebu 2026",
     gradient: "from-[#352b00] to-[#271f00]",
     border: "border-[oklch(0.85_0.18_90/30%)]",
@@ -36,7 +36,7 @@ const projects = [
   {
     tag: "Top 5",
     name: "SHAKE",
-    desc: "Privacy-first, fully offline pipeline converting ocean freight PDFs into structured JSON, Excel, and CSV data.",
+    desc: "Privacy-first, fully offline pipeline converting ocean freight PDF contracts into structured JSON, Excel, and CSV data.",
     award: "Oltek Logistics Hackathon 2026",
     gradient: "from-[#251f48] to-[#1a1535]",
     border: "border-[oklch(0.55_0.2_280/30%)]",
@@ -48,7 +48,7 @@ const projects = [
   {
     tag: "2nd Runner Up",
     name: "Token42",
-    desc: "Next-gen dating platform solving the Trust Gap with Polkadot's verifiable identity and AI-powered matching in secure enclaves. This is my exploration in the web3 space as I have a course in the curriculum.",
+    desc: "Next-gen dating platform solving the Trust Gap with Polkadot's verifiable soulbound identity and AI-powered matching. This is my exploration in the web3 space as I have a course in the curriculum.",
     award: "Polkadot Solidity Hackathon 2026",
     gradient: "from-[#38001e] to-[#280015]",
     border: "border-[oklch(0.65_0.28_350/35%)]",
@@ -60,7 +60,7 @@ const projects = [
   {
     tag: "Game Dev",
     name: "Wildcat's Den",
-    desc: "Exploration game transforming CIT-U into a virtual playground for students to discover facilities, programs, and orgs.",
+    desc: "Exploration game transforming CIT-U into a virtual playground for students to discover facilities, programs, and orgs. This was done with love and curiosity as we explored the world of game development.",
     award: "OOP Capstone 1",
     gradient: "from-[#0d2b1a] to-[#081f12]",
     border: "border-[oklch(0.7_0.18_150/30%)]",
