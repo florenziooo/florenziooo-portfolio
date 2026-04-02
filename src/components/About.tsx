@@ -7,7 +7,7 @@ const ABOUT_SECTIONS = [
       <>
         Growing up in Bato, Leyte, I was surrounded by people who worked hard to make things function despite limited resources. That environment taught me resilience and creativity in solving problems.
         <br/><br/>
-        My curiosity about technology began with simple questions about how software works behind the screen. Over time, exploring digital tools and experimenting with systems turned that curiosity into a genuine passion for programming and problem-solving.
+         Yes, I was another young victim of that "You are a hacker, you should learn IT!" just for unlocking my family's password HAHAHAHHA! But over time, exploring digital tools and experimenting with systems turned that curiosity into a genuine passion for programming and problem-solving.
       </>
     )
   },
@@ -31,7 +31,7 @@ const ABOUT_SECTIONS = [
       <>
         I aspire to become a software engineer specializing in system design and development. My goal is to build technology that addresses real-world challenges, particularly in education and community development.
         <br/><br/>
-        Beyond technical growth, I hope to remain grounded in service, leadership, and faith, continually striving to use my skills in ways that create meaningful impact.
+        I would also wanted to develop projects that ACTUALLY SELLS. Not just for the sake of having a project or pristine architecture, but something that can be used by people and has an emotional value attached to it. 
       </>
     )
   }
@@ -48,13 +48,13 @@ export default function About() {
         {/* Intro */}
         <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-10 items-start">
           <h2 className="font-display text-[clamp(2.5rem,5vw,4.5rem)] leading-[0.9] text-cream">
-            THE
+            ABOUT
             <br />
-            <em className="not-italic text-electric-yellow">STORY</em>
+            <em className="not-italic text-electric-yellow">ME</em>
           </h2>
           <div className="space-y-6 text-[0.85rem] text-cream/70 leading-relaxed mt-2">
             <p className="text-[1.05rem] text-cream/90 font-medium">
-              My name is Gil Florenz J. Sastre, a Computer Science student at the Cebu Institute of Technology – University from Bato, Leyte. I often describe myself as a singerist, scholar, and a work in progress.
+              Hello! I'm Gil, a Computer Science student at the Cebu Institute of Technology – University from Bato, Leyte. I often describe myself as a work in progress :)). I also like to sing tho.
             </p>
             <p className="pl-5 border-l-2 border-hot-pink/50">
               <span className="italic text-cream/80 block mb-2">“Whatever you do, work at it with all your heart, as working for the Lord, not for men.”</span>

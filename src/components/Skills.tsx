@@ -46,7 +46,7 @@ export default function Skills() {
           <em className="not-italic text-hot-pink">FRESHEST</em>
         </h2>
         <p className="text-[0.78rem] text-cream/40 max-w-[280px] leading-relaxed">
-          Tools and technologies I use to build things that actually work.
+          Tools and tech I use whether in school or in hackathons.
         </p>
       </div>
 
@@ -69,13 +69,6 @@ export default function Skills() {
           </div>
         ))}
         <div className="bg-surface p-7 flex flex-col justify-center items-center text-center group hover:bg-[oklch(0.24_0.02_280)] transition-colors cursor-pointer">
-          <div className="font-display text-3xl text-cream leading-none mb-2">
-            And it's
-            <br />
-            damn
-            <br />
-            good 🔥
-          </div>
           <a href="#projects" className="text-[0.7rem] text-hot-pink tracking-wide mt-2 hover:underline">
             See the projects →
           </a>

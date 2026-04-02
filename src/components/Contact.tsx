@@ -9,17 +9,13 @@ export default function Contact() {
 
         <div className="relative z-10">
           <span className="inline-flex items-center gap-1.5 bg-black/25 rounded-full px-3.5 py-1 text-[0.68rem] tracking-[0.18em] uppercase text-primary-foreground/90 mb-3.5">
-            📬 Let's connect
+            Let's connect
           </span>
           <h2 className="font-display text-[clamp(2.5rem,5vw,4.2rem)] leading-[0.9] text-primary-foreground tracking-wide mb-6">
-            GET IN
-            <br />
-            TOUCH.
-            <br />
-            SHIP.
+            GET IN TOUCH.
           </h2>
           <div className="flex items-center gap-3">
-            <div className="flex">
+            {/* <div className="flex">
               {["S", "G", "F", "J"].map((letter, i) => (
                 <div
                   key={i}
@@ -31,7 +27,7 @@ export default function Contact() {
                   {letter}
                 </div>
               ))}
-            </div>
+            </div> */}
             <div className="text-[0.72rem] text-primary-foreground/90 leading-snug">
               <strong className="block text-[0.8rem]">Ready to collaborate</strong>
               Open for projects & opportunities
@@ -47,7 +43,7 @@ export default function Contact() {
               { icon: "🎓", text: "CIT-U — BS Computer Science" },
             ].map((p) => (
               <div key={p.text} className="flex items-center gap-2.5 text-[0.74rem] text-black/75">
-                <span className="w-7 h-7 shrink-0 bg-black/12 rounded-full flex items-center justify-center text-[0.9rem]">
+                <span className="w-7 h-7 shrink-0 bg-black/12 rounded-full flex items-center justify-center text-[1.2rem]">
                   {p.icon}
                 </span>
                 {p.text}
@@ -62,7 +58,7 @@ export default function Contact() {
               EMAIL ME ↗
             </a>
             <a
-              href="https://github.com/"
+              href="https://github.com/florenziooo"
               target="_blank"
               rel="noopener noreferrer"
               className="px-5 py-3.5 bg-black/18 text-primary-foreground rounded-full font-display text-base tracking-[0.15em] hover:-translate-y-0.5 transition-transform"

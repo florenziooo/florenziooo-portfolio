@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import Modal from "./ui/Modal";
 import wildcatsDenLogo from "./logos/den_logo.png";
 import shakeLogo from "./logos/shake_logo.png";
 import linawLogo from "./logos/linaw_logo.png";
@@ -84,31 +85,16 @@ const projects = [
 
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState<string | null>(null);
-  const [currentImageIdx, setCurrentImageIdx] = useState(0);
-
-  useEffect(() => {
-    if (!selectedProject || !projectImages[selectedProject]) return;
-    
-    // Pick a random image initially or just start from 0
-    const randomInitial = Math.floor(Math.random() * projectImages[selectedProject].length);
-    setCurrentImageIdx(randomInitial);
-    
-    const interval = setInterval(() => {
-      setCurrentImageIdx(Math.floor(Math.random() * projectImages[selectedProject].length));
-    }, 4000);
-    return () => clearInterval(interval);
-  }, [selectedProject]);
 
   return (
     <section id="projects" className="py-20 px-5">
       <div className="px-10 mb-12 flex items-end justify-between flex-wrap gap-5 max-md:px-5">
         <h2 className="font-display text-[clamp(3rem,7vw,6rem)] leading-[0.9] text-cream">
           THE
-          <br />
-          <em className="not-italic text-hot-pink">LINEUP</em>
+          <em className="not-italic text-hot-pink"> LINEUP</em>
         </h2>
         <p className="text-[0.78rem] text-cream/40 max-w-[280px] leading-relaxed">
-          Hackathon wins, passion projects, and things I built because I couldn't stop thinking about them.
+          Things I built either out of school, hackathons or just pure curiosity :))
         </p>
       </div>
 
@@ -171,33 +157,12 @@ export default function Projects() {
       </div>
 
       {/* Modal Slideshow */}
-      {selectedProject && projectImages[selectedProject] && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-background/80 backdrop-blur-md">
-          <div className="relative w-full max-w-5xl rounded-[2rem] overflow-hidden shadow-[0_0_80px_oklch(0.65_0.28_350/25%)] border border-white/10 h-[70vh] max-h-[800px] flex">
-            {/* Close Button */}
-            <button
-              onClick={() => setSelectedProject(null)}
-              className="absolute top-5 right-5 z-50 bg-black/40 hover:bg-black/80 text-cream w-12 h-12 flex items-center justify-center rounded-full backdrop-blur-md transition-all text-xl border border-white/20"
-            >
-              ✕
-            </button>
-            <div className="relative w-full h-full bg-black flex items-center justify-center">
-              {projectImages[selectedProject].map((img, idx) => (
-                <img
-                  key={idx}
-                  src={img}
-                  alt={`${selectedProject} screenshot`}
-                  className={`absolute inset-0 w-full h-full object-contain transition-all duration-1000 ease-in-out ${
-                    idx === currentImageIdx ? "opacity-100 scale-100 z-10" : "opacity-0 scale-105 z-0"
-                  }`}
-                />
-              ))}
-            </div>
-            {/* Overlay gradient at bottom for aesthetics */}
-            <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-black/80 to-transparent z-40 pointer-events-none" />
-          </div>
-        </div>
-      )}
+      <Modal 
+        isOpen={!!selectedProject} 
+        onClose={() => setSelectedProject(null)} 
+        title={selectedProject || undefined}
+        images={selectedProject && projectImages[selectedProject] ? projectImages[selectedProject] : []}
+      />
     </section>
   );
 }

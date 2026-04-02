@@ -1,6 +1,15 @@
+import { useState } from "react";
 import profile4 from "./images/profile4.png";
+import parangal1 from "./images/parangal1.png";
+import Modal from "./ui/Modal";
+
+const heroImages: Record<string, string[]> = {
+  "Top 1 Parangal Awardee 2023": [parangal1],
+};
 
 export default function Hero() {
+  const [activeModal, setActiveModal] = useState<string | null>(null);
+
   return (
     <section className="relative min-h-[80vh] flex items-center px-15 py-12 overflow-hidden max-md:px-5 max-md:py-8">
       {/* Grid overlay */}
@@ -27,19 +36,27 @@ export default function Hero() {
         </h1>
 
         <p className="text-[1rem] text-cream/50 leading-relaxed max-w-lg mt-4 mb-6">
-          BS Computer Science student at CIT-U. Hackathon champion. Building things that slap — from AI reading companions to blockchain dating platforms.
+          BS Computer Science student at CIT-U—aspiring to contribute in fields of AI, blockchain, and software design.
         </p>
 
         {/* Skill pills */}
         <div className="flex flex-wrap gap-2 mb-7">
-          {["BSCS", "DOST-SEI Scholar", "Top 1 Parangal Awardee 2023"].map((s) => (
-            <span
-              key={s}
-              className="text-[0.8rem] tracking-[0.08em] px-3 py-1.5 rounded-full border border-cream/15 text-cream/45 uppercase hover:border-hot-pink hover:text-hot-pink transition-colors"
-            >
-              {s}
-            </span>
-          ))}
+          {["BSCS", "DOST-SEI Scholar", "Top 1 Parangal Awardee 2023"].map((s) => {
+            const isClickable = s.includes("Parangal");
+            return (
+              <span
+                key={s}
+                onClick={() => isClickable ? setActiveModal(s) : undefined}
+                className={`text-[0.8rem] tracking-[0.08em] px-3 py-1.5 rounded-full border uppercase transition-all duration-300 ${
+                  isClickable 
+                    ? "border-cream/50 text-cream/50 cursor-pointer animate-pulse hover:animate-none hover:border-electric-yellow hover:text-electric-yellow hover:-translate-y-0.5 hover:rotate-1" 
+                    : "border-cream/15 text-cream/45 hover:border-hot-pink hover:text-hot-pink"
+                }`}
+              >
+                {s}
+              </span>
+            );
+          })}
         </div>
 
         {/* CTAs */}
@@ -88,6 +105,14 @@ export default function Hero() {
           className="h-full w-auto object-contain object-bottom drop-shadow-[0_0_80px_oklch(0.65_0.28_350/25%)] opacity-90"
         />
       </div>
+
+      {/* Modal */}
+      <Modal 
+        isOpen={!!activeModal} 
+        onClose={() => setActiveModal(null)} 
+        title={activeModal || undefined}
+        images={activeModal ? heroImages[activeModal] || [] : []}
+      />
     </section>
   );
 }
