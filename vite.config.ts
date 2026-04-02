@@ -163,7 +163,8 @@ function devServerFnErrorLogger() {
 export default defineConfig(({ command, mode }) => {
   // Use Cloudflare Workers plugin for builds (produces worker output)
   // Skip for dev server (command=serve) since workerd runtime isn't available
-  const useCloudflare = command === "build";
+  const isStaticExport = process.env.VITE_STATIC_EXPORT === "true";
+  const useCloudflare = command === "build" && !isStaticExport;
 
   const env = loadEnv(mode, process.cwd(), "VITE_");
   const envDefine: Record<string, string> = {};
@@ -172,6 +173,7 @@ export default defineConfig(({ command, mode }) => {
   }
 
   return {
+    base: "/florenziooo-portfolio/",
     server: {
       host: "::",
       port: 8080,
@@ -191,7 +193,11 @@ export default defineConfig(({ command, mode }) => {
       devClientErrorLogger(),
       devServerFnErrorLogger(),
       ...(useCloudflare ? [cloudflare({ viteEnvironment: { name: "ssr" } })] : []),
-      tanstackStart(),
+      tanstackStart({
+        prerender: {
+          enabled: true,
+        },
+      }),
       viteReact(),
       mode === "development" && componentTagger(),
     ].filter(Boolean),
