@@ -1,5 +1,3 @@
-import { useState } from "react";
-import Modal from "./ui/Modal";
 import { Github } from "lucide-react";
 import wildcatsDenLogo from "./logos/den_logo.png";
 import shakeLogo from "./logos/shake_logo.png";
@@ -31,8 +29,8 @@ const projects = [
     border: "border-[oklch(0.85_0.18_90/30%)]",
     chipColor: "text-electric-yellow",
     logo: linawLogo,
-    opacity: 30,
     github: "https://github.com/GReturn/Linaw",
+    tags: ["AI/ML", "MODAL", "PYTHON"],
   },
   {
     tag: "Top 5",
@@ -43,32 +41,32 @@ const projects = [
     border: "border-[oklch(0.55_0.2_280/30%)]",
     chipColor: "text-sky-accent",
     logo: shakeLogo,
-    opacity: 20,
     github: "https://github.com/GReturn/Shake",
+    tags: ["PYTHON", "FLASK", "PDF PARSING"],
   },
   {
     tag: "2nd Runner Up",
     name: "Token42",
-    desc: "Next-gen dating platform solving the Trust Gap with Polkadot's verifiable soulbound identity and AI-powered matching. This is my exploration in the web3 space as I have a course in the curriculum.",
+    desc: "Next-gen dating platform solving the Trust Gap with Polkadot's verifiable soulbound identity and AI-powered matching. This is my exploration in the web3 space.",
     award: "Polkadot Solidity Hackathon 2026",
     gradient: "from-[#38001e] to-[#280015]",
     border: "border-[oklch(0.65_0.28_350/35%)]",
     chipColor: "text-hot-pink",
     logo: token42Logo,
-    opacity: 20,
     github: "https://github.com/GReturn/Project-Token42",
+    tags: ["SOLIDITY", "XMTP", "WEB3"],
   },
   {
     tag: "Game Dev",
     name: "Wildcat's Den",
-    desc: "Exploration game transforming CIT-U into a virtual playground for students to discover facilities, programs, and orgs. This was done with love and curiosity as we explored the world of game development.",
+    desc: "Exploration game transforming CIT-U into a virtual playground for students to discover facilities, programs, and orgs.",
     award: "OOP Capstone 1",
     gradient: "from-[#0d2b1a] to-[#081f12]",
     border: "border-[oklch(0.7_0.18_150/30%)]",
     chipColor: "text-lime",
     logo: wildcatsDenLogo,
-    opacity: 10,
     github: "https://github.com/florenziooo/CAPSTONE-libgdx",
+    tags: ["JAVA", "LIBGDX"],
   },
   {
     tag: "EdTech",
@@ -79,14 +77,12 @@ const projects = [
     border: "border-[oklch(0.7_0.22_30/30%)]",
     chipColor: "text-[oklch(0.7_0.22_30)]",
     logo: quizmoLogo,
-    opacity: 30,
     github: "https://github.com/Keloyys/CCP",
+    tags: ["JAVA", "JAVAFX"],
   },
 ];
 
 export default function Projects() {
-  const [selectedProject, setSelectedProject] = useState<string | null>(null);
-
   return (
     <section id="projects" className="py-20 px-5">
       <div className="px-10 mb-12 flex items-end justify-between flex-wrap gap-5 max-md:px-5">
@@ -101,71 +97,76 @@ export default function Projects() {
 
       <div className="overflow-x-auto pb-10">
         <div className="flex gap-6 px-10 max-md:px-5" style={{ minWidth: "max-content" }}>
-          {projects.map((p) => (
-            <div
-              key={p.name}
-              data-aos="fade-up"
-              data-aos-duration="1550"
-              className={`relative min-w-[300px] w-[300px] rounded-3xl bg-gradient-to-br ${p.gradient} border ${p.border} p-7 flex flex-col justify-between h-[420px] hover:-translate-y-3 hover:rotate-[-1deg] transition-transform duration-300 group overflow-hidden`}
-            >
-              {/* Background Logo Placeholder */}
-              <img 
-                src={p.logo} 
-                alt="Project background logo" 
-                className={`absolute inset-0 w-full h-full object-cover opacity-${p.opacity} pointer-events-none mix-blend-overlay select-none`}
-              />
-              
-              <div className="relative z-10 flex flex-col justify-between h-full">
-                <div>
-                  <span className={`text-[0.62rem] tracking-[0.15em] uppercase px-2.5 py-1 rounded-full border border-current ${p.chipColor}`}>
+          {projects.map((p) => {
+            const hasImage = projectImages[p.name] && projectImages[p.name].length > 0;
+            return (
+              <div
+                key={p.name}
+                data-aos="fade-up"
+                data-aos-duration="1550"
+                className={`relative w-[340px] flex-shrink-0 rounded-3xl bg-gradient-to-br ${p.gradient} border ${p.border} flex flex-col hover:-translate-y-3 hover:rotate-[-1deg] transition-transform duration-300 group overflow-hidden h-[480px]`}
+              >
+                {/* Photo Header */}
+                <div className="h-44 w-full relative shrink-0 bg-black/20 border-b border-white/5">
+                  {hasImage ? (
+                    <img 
+                      src={projectImages[p.name][0]} 
+                      alt={p.name} 
+                      className="w-full h-full object-cover mix-blend-overlay opacity-90 group-hover:opacity-100 transition-opacity"
+                    />
+                  ) : (
+                    <img 
+                      src={p.logo} 
+                      alt="Project placeholder" 
+                      className="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none mix-blend-overlay select-none"
+                    />
+                  )}
+                  <span className={`absolute top-4 left-4 text-[0.62rem] tracking-[0.15em] uppercase px-3 py-1.5 rounded-full border bg-black/50 backdrop-blur-sm border-current ${p.chipColor}`}>
                     {p.tag}
                   </span>
-                  <h3 className="font-display text-4xl text-cream tracking-wide mt-6 mb-3 leading-none">
-                    {p.name}
-                  </h3>
-                  <p className="text-[0.75rem] text-cream/45 leading-relaxed mb-4">
-                    {p.desc}
-                  </p>
                 </div>
-                <div>
-                  <div className="text-[0.75rem] text-cream/70 tracking-[0.15em] uppercase mb-4">
-                    {p.award}
+                
+                {/* Content */}
+                <div className="p-6 flex flex-col flex-1 justify-between">
+                  <div>
+                    <h3 className="font-display text-3xl text-cream tracking-wide mb-2 leading-none">
+                      {p.name}
+                    </h3>
+                    <p className="text-[0.75rem] text-cream/50 leading-relaxed max-h-[80px] overflow-hidden line-clamp-4">
+                      {p.desc}
+                    </p>
                   </div>
-                  <div className="flex gap-3">
-                    {projectImages[p.name] && (
-                      <button 
-                        onClick={(e) => {
-                          e.preventDefault();
-                          setSelectedProject(p.name);
-                        }}
-                        className="bg-hot-pink text-primary-foreground px-5 py-2.5 rounded-xl cursor-pointer font-display text-base tracking-[0.1em] hover:scale-105 hover:bg-[oklch(0.6_0.3_350)] transition-transform flex-1 text-center"
+                  
+                  <div className="mt-4">
+                    <div className="text-[0.7rem] font-bold text-electric-yellow/90 tracking-[0.1em] uppercase mb-2">
+                      {p.award}
+                    </div>
+                    {/* Tags Below Awards */}
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {p.tags.map((t) => (
+                        <span key={t} className="text-[0.6rem] tracking-widest uppercase px-2.5 py-1.5 rounded-full bg-foreground/10 text-cream/60">
+                          {t}
+                        </span>
+                      ))}
+                    </div>
+                    
+                    <div className="flex gap-3">
+                      <a 
+                        href={p.github} 
+                        target="_blank" 
+                        rel="noreferrer" 
+                        className="border-[1.5px] border-cream/25 text-cream/80 w-full py-2.5 rounded-xl transition-colors flex items-center justify-center hover:border-electric-yellow hover:text-electric-yellow gap-2 font-display text-sm tracking-widest bg-black/20"
                       >
-                        VIEW →
-                      </button>
-                    )}
-                    <a 
-                      href={p.github} 
-                      target="_blank" 
-                      rel="noreferrer" 
-                      className="border-[1.5px] border-cream/25 text-cream px-4 py-2.5 rounded-xl transition-colors flex items-center justify-center flex-shrink-0 hover:border-electric-yellow hover:text-electric-yellow"
-                    >
-                      <Github size={20} />
-                    </a>
+                        <Github size={18} /> GITHUB
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
-
-      {/* Modal Slideshow */}
-      <Modal 
-        isOpen={!!selectedProject} 
-        onClose={() => setSelectedProject(null)} 
-        title={selectedProject || undefined}
-        images={selectedProject && projectImages[selectedProject] ? projectImages[selectedProject] : []}
-      />
     </section>
   );
 }

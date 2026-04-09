@@ -35,7 +35,7 @@ export default function Skills() {
   return (
     <section id="skills" className="py-24 px-10 max-md:px-5 relative">
       {/* Background watermark */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-display text-[20vw] text-foreground/[0.02] whitespace-nowrap pointer-events-none tracking-wider">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-display text-[20vw] text-electric-yellow/[0.04] drop-shadow-[0_0_80px_rgba(255,255,0,0.4)] whitespace-nowrap pointer-events-none tracking-wider">
         STACK
       </div>
 
