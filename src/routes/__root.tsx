@@ -1,4 +1,7 @@
+import { useEffect } from "react";
 import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 import appCss from "../styles.css?url";
 
@@ -66,5 +69,9 @@ function RootShell({ children }: { children: React.ReactNode }) {
 }
 
 function RootComponent() {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return <Outlet />;
 }

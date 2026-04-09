@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Modal from "./ui/Modal";
+import { Github } from "lucide-react";
 import wildcatsDenLogo from "./logos/den_logo.png";
 import shakeLogo from "./logos/shake_logo.png";
 import linawLogo from "./logos/linaw_logo.png";
@@ -103,6 +104,8 @@ export default function Projects() {
           {projects.map((p) => (
             <div
               key={p.name}
+              data-aos="fade-up"
+              data-aos-duration="1550"
               className={`relative min-w-[300px] w-[300px] rounded-3xl bg-gradient-to-br ${p.gradient} border ${p.border} p-7 flex flex-col justify-between h-[420px] hover:-translate-y-3 hover:rotate-[-1deg] transition-transform duration-300 group overflow-hidden`}
             >
               {/* Background Logo Placeholder */}
@@ -144,9 +147,9 @@ export default function Projects() {
                       href={p.github} 
                       target="_blank" 
                       rel="noreferrer" 
-                      className="border-[1.5px] border-cream/25 text-cream px-4 py-2.5 rounded-xl font-display tracking-[0.12em] text-sm hover:border-electric-yellow hover:text-electric-yellow transition-colors flex items-center justify-center flex-shrink-0"
+                      className="border-[1.5px] border-cream/25 text-cream px-4 py-2.5 rounded-xl transition-colors flex items-center justify-center flex-shrink-0 hover:border-electric-yellow hover:text-electric-yellow"
                     >
-                      GITHUB ↗
+                      <Github size={20} />
                     </a>
                   </div>
                 </div>

@@ -47,12 +47,12 @@ export default function About() {
         
         {/* Intro */}
         <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-10 items-start">
-          <h2 className="font-display text-[clamp(2.5rem,5vw,4.5rem)] leading-[0.9] text-cream">
+          <h2 data-aos="fade-right" data-aos-duration="1350" className="font-display text-[clamp(2.5rem,5vw,4.5rem)] leading-[0.9] text-cream">
             ABOUT
             <br />
             <em className="not-italic text-electric-yellow">ME</em>
           </h2>
-          <div className="space-y-6 text-[0.85rem] text-cream/70 leading-relaxed mt-2">
+          <div data-aos="fade-left" data-aos-duration="1550" className="space-y-6 text-[0.85rem] text-cream/70 leading-relaxed mt-2">
             <p className="text-[1.05rem] text-cream/90 font-medium">
               Hello! I'm Gil, a Computer Science student at the Cebu Institute of Technology – University from Bato, Leyte. I often describe myself as a work in progress :)). I also like to sing tho.
             </p>
@@ -63,20 +63,7 @@ export default function About() {
           </div>
         </div>
 
-        {/* Detailed Sections in a grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-x-10 gap-y-16 mt-4">
-          {ABOUT_SECTIONS.map((section, idx) => (
-            <div key={idx} className="group cursor-pointer">
-              <div className={`text-[1rem] tracking-[0.25em] uppercase ${section.colorClass} mb-5 flex items-center gap-3`}>
-                <span className={`w-8 h-[1px] ${section.lineClass} group-hover:w-12 transition-all duration-300`}></span>
-                {section.title}
-              </div>
-              <p className="text-[0.85rem] text-cream/50 leading-relaxed">
-                {section.content}
-              </p>
-            </div>
-          ))}
-        </div>
+
       </div>
     </section>
   );

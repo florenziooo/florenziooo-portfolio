@@ -20,7 +20,7 @@ export default function Hero() {
 
       <div className="relative z-10 max-w-3xl">
         {/* Eyebrow */}
-        <div className="inline-flex items-center gap-2.5 bg-electric-yellow/12 border border-electric-yellow rounded-full px-4 py-1.5 mb-5">
+        <div data-aos="fade-up" data-aos-duration="1350" className="inline-flex items-center gap-2.5 bg-electric-yellow/12 border border-electric-yellow rounded-full px-4 py-1.5 mb-5">
           <span className="w-1.5 h-1.5 bg-electric-yellow rounded-full animate-blink" />
           <span className="text-[0.72rem] text-electric-yellow tracking-[0.2em] uppercase">
             Open to opportunities • Cebu, PH
@@ -28,19 +28,19 @@ export default function Hero() {
         </div>
 
         {/* Heading */}
-        <h1 className="font-display text-[clamp(4.5rem,9vw,9rem)] leading-[0.88] tracking-tight">
+        <h1 data-aos="fade-up" data-aos-duration="1450" className="font-display text-[clamp(4.5rem,9vw,9rem)] leading-[0.88] tracking-tight">
           <span className="text-cream">GIL</span>{" "}
           <span className="text-hot-pink">FLORENZ</span>
           <br />
           <span className="text-electric-yellow">SASTRE</span>
         </h1>
 
-        <p className="text-[1rem] text-cream/50 leading-relaxed max-w-lg mt-4 mb-6">
+        <p data-aos="fade-up" data-aos-duration="1550" className="text-[1rem] text-cream/50 leading-relaxed max-w-lg mt-4 mb-6">
           BS Computer Science student at CIT-U—aspiring to contribute in fields of AI, blockchain, and software design.
         </p>
 
         {/* Skill pills */}
-        <div className="flex flex-wrap gap-2 mb-7">
+        <div data-aos="fade-up" data-aos-duration="1650" className="flex flex-wrap gap-2 mb-7">
           {["BSCS", "DOST-SEI Scholar", "Top 1 Parangal Awardee 2023"].map((s) => {
             const isClickable = s.includes("Parangal");
             return (
@@ -60,7 +60,7 @@ export default function Hero() {
         </div>
 
         {/* CTAs */}
-        <div className="flex flex-wrap gap-3.5 mb-7">
+        <div data-aos="fade-up" data-aos-duration="1750" className="flex flex-wrap gap-3.5 mb-7">
           <a
             href="#projects"
             className="font-display text-xl tracking-[0.15em] bg-hot-pink text-primary-foreground px-8 py-3.5 rounded-full hover:shadow-[0_0_40px_oklch(0.65_0.28_350/50%)] hover:-translate-y-0.5 hover:scale-[1.03] transition-all"
@@ -75,26 +75,6 @@ export default function Hero() {
           </a>
         </div>
 
-        {/* Mini stats */}
-        <div className="flex flex-wrap gap-3">
-          {[
-            { val: "3×", label: "Hackathon\nWins" },
-            { val: "5+", label: "Projects\nBuilt" },
-            { val: "9+", label: "Languages\nKnown" },
-          ].map((s) => (
-            <div
-              key={s.val}
-              className="flex items-center gap-2 bg-foreground/5 border border-foreground/10 rounded-lg px-3.5 py-2"
-            >
-              <span className="font-display text-lg text-lime leading-none tracking-wide">
-                {s.val}
-              </span>
-              <span className="text-[0.6rem] text-cream/40 tracking-[0.12em] uppercase whitespace-pre leading-tight">
-                {s.label}
-              </span>
-            </div>
-          ))}
-        </div>
       </div>
 
       {/* Profile Image (Bottom Right) */}
