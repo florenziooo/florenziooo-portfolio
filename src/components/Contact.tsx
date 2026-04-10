@@ -119,7 +119,7 @@ export default function Contact() {
             </p>
           </div>
           <div className="flex flex-wrap items-center gap-3 relative z-10">
-            <a href="/resume.pdf" target="_blank" rel="noreferrer" className="flex items-center gap-2 px-6 py-3 bg-hot-pink text-primary-foreground rounded-full text-[0.7rem] font-bold tracking-widest uppercase hover:scale-105 transition-transform">
+            <a href="/florenziooo-portfolio/resume.pdf" target="_blank" rel="noreferrer" className="flex items-center gap-2 px-6 py-3 bg-hot-pink text-primary-foreground rounded-full text-[0.7rem] font-bold tracking-widest uppercase hover:scale-105 transition-transform">
               RESUME <Download size={14} />
             </a>
             <a href="mailto:frezkieflorenz@gmail.com" className="flex items-center gap-2 px-6 py-3 bg-foreground/5 border border-foreground/10 hover:border-foreground/20 text-cream rounded-full text-[0.7rem] font-bold tracking-widest uppercase transition-colors">
