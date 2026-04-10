@@ -11,8 +11,7 @@ export default function Contact() {
             Get in <span className="text-hot-pink">Touch</span>
           </h2>
           <p className="text-[0.85rem] text-cream/50 max-w-lg leading-relaxed">
-            Let's build something amazing together. Reach out for collaborations,
-            opportunities, or just a friendly hello.
+            I'm always eager to help bring bold ideas to life. Whether you want to discuss an exciting new project, explore technical collaborations, or simply say hello, my inbox is open!
           </p>
         </div>
 
@@ -116,7 +115,7 @@ export default function Contact() {
           <div className="relative z-10">
             <h3 className="text-2xl font-display text-cream/90 tracking-wide mb-2">Ready to work together?</h3>
             <p className="text-[0.8rem] text-cream/50 max-w-md">
-              I'm currently looking for new opportunities. Reach out via email, message, or learn more through my resume.
+              Ready to create something impactful? I'm actively seeking fresh challenges and roles where I can contribute. Drop me a message, or explore my resume to learn more about my background.
             </p>
           </div>
           <div className="flex flex-wrap items-center gap-3 relative z-10">

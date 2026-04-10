@@ -19,10 +19,10 @@ function Index() {
       <Ticker />
       <Navbar />
       <Hero />
-      <About />
       <Projects />
       <Skills />
       <Education />
+      <About />
       <Contact />
       <Footer />
     </div>

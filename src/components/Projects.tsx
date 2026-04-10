@@ -5,12 +5,12 @@ import linawLogo from "./logos/linaw_logo.png";
 import token42Logo from "./logos/token42_logo.png";
 import quizmoLogo from "./logos/quizmo_logo.png";
 
-import UPAwarding from "./images/UP_awarding.jpg";
+import UPAwarding from "./images/UP_awarding.png";
 import UPCert from "./images/UP_cert.jpg";
-import shakeAwarding from "./images/shake_awarding.jpg";
+import shakeAwarding from "./images/shake_awarding.png";
 import shakeCert from "./images/shake_cert.jpg";
 import shakeTop5 from "./images/shake_top5.jpg";
-import polkadotAwarding from "./images/polkadot_awarding.jpeg";
+import polkadotAwarding from "./images/polkadot_awarding.png";
 import polkadotCert from "./images/polkadot_cert.jpeg";
 
 const projectImages: Record<string, string[]> = {
@@ -104,15 +104,15 @@ export default function Projects() {
                 key={p.name}
                 data-aos="fade-up"
                 data-aos-duration="1550"
-                className={`relative w-[340px] flex-shrink-0 rounded-3xl bg-gradient-to-br ${p.gradient} border ${p.border} flex flex-col hover:-translate-y-3 hover:rotate-[-1deg] transition-transform duration-300 group overflow-hidden h-[480px]`}
+                className={`relative w-[340px] flex-shrink-0 rounded-3xl bg-gradient-to-br ${p.gradient} border ${p.border} flex flex-col hover:-translate-y-3 hover:rotate-[-1deg] transition-transform duration-300 group overflow-hidden h-162`}
               >
                 {/* Photo Header */}
-                <div className="h-44 w-full relative shrink-0 bg-black/20 border-b border-white/5">
+                <div className="h-75 w-full relative shrink-0 bg-black/20 border-b border-white/5">
                   {hasImage ? (
                     <img 
                       src={projectImages[p.name][0]} 
                       alt={p.name} 
-                      className="w-full h-full object-cover mix-blend-overlay opacity-90 group-hover:opacity-100 transition-opacity"
+                      className="w-full h-full opacity-50 object-cover group-hover:opacity-80 transition-opacity"
                     />
                   ) : (
                     <img 
@@ -121,14 +121,14 @@ export default function Projects() {
                       className="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none mix-blend-overlay select-none"
                     />
                   )}
-                  <span className={`absolute top-4 left-4 text-[0.62rem] tracking-[0.15em] uppercase px-3 py-1.5 rounded-full border bg-black/50 backdrop-blur-sm border-current ${p.chipColor}`}>
-                    {p.tag}
-                  </span>
                 </div>
                 
                 {/* Content */}
                 <div className="p-6 flex flex-col flex-1 justify-between">
                   <div>
+                    <span className={`inline-block mb-4 text-[0.62rem] tracking-[0.15em] uppercase px-3 py-1.5 rounded-full border bg-black/50 backdrop-blur-sm border-current ${p.chipColor}`}>
+                      {p.tag}
+                    </span>
                     <h3 className="font-display text-3xl text-cream tracking-wide mb-2 leading-none">
                       {p.name}
                     </h3>

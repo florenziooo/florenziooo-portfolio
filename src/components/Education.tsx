@@ -123,7 +123,7 @@ export default function Education() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {certItems.map((item, i) => (
               <div key={i} data-aos="fade-up" data-aos-duration={1450 + i * 100} className="bg-foreground/5 border border-foreground/10 rounded-3xl overflow-hidden flex flex-col sm:flex-row xl:flex-col group hover:-translate-y-1 transition-transform duration-300">
-                <div className="h-32 sm:h-auto xl:h-40 sm:w-32 xl:w-full relative bg-black/40 shrink-0">
+                <div className="h-32 sm:h-auto xl:h-60 sm:w-32 xl:w-full relative bg-black/40 shrink-0">
                   <img src={item.image} alt={item.title} className="w-full h-full object-cover mix-blend-overlay opacity-80 group-hover:opacity-100 transition-opacity" />
                 </div>
                 <div className="p-5 flex flex-col justify-between flex-1 gap-2">
