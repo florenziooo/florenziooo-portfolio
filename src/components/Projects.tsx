@@ -13,6 +13,10 @@ import shakeTop5 from "./images/shake_top5.jpg";
 import polkadotAwarding from "./images/polkadot_awarding.png";
 import polkadotCert from "./images/polkadot_cert.jpeg";
 
+import shakeDemo from "./images/shake_demo.mp4";
+import token42Demo from "./images/token42_demo.mp4";
+import linawDemo from "./images/linaw_demo_ext.png";
+
 const projectImages: Record<string, string[]> = {
   Linaw: [UPAwarding, UPCert],
   SHAKE: [shakeAwarding, shakeCert, shakeTop5],
@@ -30,7 +34,9 @@ const projects = [
     chipColor: "text-electric-yellow",
     logo: linawLogo,
     github: "https://github.com/GReturn/Linaw",
-    tags: ["AI/ML", "MODAL", "PYTHON"],
+    tags: ["AI/ML", "VITE", "PYTHON", "EDUCATION"],
+    demo: linawDemo,
+    demoType: "image",
   },
   {
     tag: "Top 5",
@@ -42,7 +48,9 @@ const projects = [
     chipColor: "text-sky-accent",
     logo: shakeLogo,
     github: "https://github.com/GReturn/Shake",
-    tags: ["PYTHON", "FLASK", "PDF PARSING"],
+    tags: ["CONTRACTS", "PDF PARSING", "PYTHON"],
+    demo: shakeDemo,
+    demoType: "video",
   },
   {
     tag: "2nd Runner Up",
@@ -54,7 +62,9 @@ const projects = [
     chipColor: "text-hot-pink",
     logo: token42Logo,
     github: "https://github.com/GReturn/Project-Token42",
-    tags: ["SOLIDITY", "XMTP", "WEB3"],
+    tags: ["AI", "WEB3", "BLOCKCHAIN", "DATING"],
+    demo: token42Demo,
+    demoType: "video",
   },
   {
     tag: "Game Dev",
@@ -66,7 +76,7 @@ const projects = [
     chipColor: "text-lime",
     logo: wildcatsDenLogo,
     github: "https://github.com/florenziooo/CAPSTONE-libgdx",
-    tags: ["JAVA", "LIBGDX"],
+    tags: ["EXPLORATION GAME", "JAVA", "LIBGDX"],
   },
   {
     tag: "EdTech",
@@ -78,7 +88,7 @@ const projects = [
     chipColor: "text-[oklch(0.7_0.22_30)]",
     logo: quizmoLogo,
     github: "https://github.com/Keloyys/CCP",
-    tags: ["JAVA", "JAVAFX"],
+    tags: ["AI", "JAVA", "JAVAFX"],
   },
 ];
 
@@ -112,14 +122,32 @@ export default function Projects() {
                     <img 
                       src={projectImages[p.name][0]} 
                       alt={p.name} 
-                      className="w-full h-full opacity-50 object-cover group-hover:opacity-80 transition-opacity"
+                      className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${p.demo ? 'opacity-50 group-hover:opacity-0' : 'opacity-50 group-hover:opacity-80'}`}
                     />
                   ) : (
                     <img 
                       src={p.logo} 
                       alt="Project placeholder" 
-                      className="absolute inset-0 w-full h-full object-cover opacity-20 pointer-events-none mix-blend-overlay select-none"
+                      className={`absolute inset-0 w-full h-full object-cover pointer-events-none mix-blend-overlay select-none transition-opacity duration-300 ${p.demo ? 'opacity-20 group-hover:opacity-0' : 'opacity-20'}`}
                     />
+                  )}
+                  {p.demo && (
+                    p.demoType === "video" ? (
+                      <video
+                        src={p.demo}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10"
+                      />
+                    ) : (
+                      <img
+                        src={p.demo}
+                        alt={`${p.name} demo`}
+                        className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 bg-black/40"
+                      />
+                    )
                   )}
                 </div>
                 

@@ -30,7 +30,7 @@ const exploredItems = [
   },
   {
     title: "Infosession '26: Aurora",
-    org: "GDG",
+    org: "Google Developer Groups",
     desc: "Participated in an exclusive info session uncovering the architectural planning for Project Aurora.",
     tags: ["TECH TALK", "GDG"],
     image: infosession,
@@ -65,7 +65,7 @@ export default function Education() {
   return (
     <section className="py-20 px-10 max-md:px-5">
       <div className="max-w-6xl mx-auto flex flex-col gap-16">
-        
+
         {/* Intro */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-end">
           <div>
@@ -132,8 +132,8 @@ export default function Education() {
                     <p className="text-[0.65rem] text-cream/50 leading-relaxed line-clamp-2">{item.desc}</p>
                   </div>
                   <div className="mt-2">
-                     <div className="text-[0.6rem] text-lime/90 tracking-widest uppercase mb-2 font-bold">{item.org}</div>
-                     <div className="flex flex-wrap gap-2">
+                    <div className="text-[0.6rem] text-lime/90 tracking-widest uppercase mb-2 font-bold">{item.org}</div>
+                    <div className="flex flex-wrap gap-2">
                       {item.tags.map(t => (
                         <span key={t} className="text-[0.55rem] tracking-wider uppercase px-2 py-0.5 rounded-full bg-foreground/10 text-cream/60">
                           {t}
