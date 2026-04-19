@@ -196,6 +196,8 @@ export default defineConfig(({ command, mode }) => {
       tanstackStart({
         prerender: {
           enabled: true,
+          crawlLinks: false,
+          routes: ['/'],
         },
       }),
       viteReact(),
