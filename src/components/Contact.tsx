@@ -31,9 +31,9 @@ export default function Contact() {
                 <div className="text-[0.6rem] text-cream/40 uppercase tracking-widest mb-2">EMAIL</div>
                 <div 
                   className="flex items-center justify-between group cursor-pointer" 
-                  onClick={() => navigator.clipboard.writeText('frezkieflorenz@gmail.com')}
+                  onClick={() => navigator.clipboard.writeText('florenziooo23@gmail.com')}
                 >
-                  <span className="text-[0.85rem] text-cream/90">frezkieflorenz@gmail.com</span>
+                  <span className="text-[0.85rem] text-cream/90">florenziooo23@gmail.com</span>
                   <Copy size={14} className="text-cream/30 group-hover:text-cream/90 transition-colors" />
                 </div>
               </div>
@@ -60,7 +60,7 @@ export default function Contact() {
               Open to Work
             </div>
             <div className="flex flex-wrap gap-2 text-[0.7rem] text-cream/60">
-              {["Internships", "Job Opportunities", "Full Stack Development", "Product Designing"].map(tag => (
+              {["Software Engineer", "System Software Developer", "R&D Computing Professional", "Applications Software Developer", "Computer Programmer"].map(tag => (
                 <span key={tag} className="border border-foreground/10 rounded-full px-4 py-1.5 bg-foreground/5">
                   {tag}
                 </span>
@@ -97,11 +97,11 @@ export default function Contact() {
                 <Github size={20} />
                 GitHub
               </a>
-              <a href="https://linkedin.com/in/florenziooo" target="_blank" rel="noreferrer" className="flex flex-col items-center justify-center gap-2 bg-foreground/5 hover:bg-foreground/10 transition-colors rounded-2xl p-4 text-[0.7rem] text-cream/70">
+              <a href="https://linkedin.com/in/gil-florenz-sastre-528007400/" target="_blank" rel="noreferrer" className="flex flex-col items-center justify-center gap-2 bg-foreground/5 hover:bg-foreground/10 transition-colors rounded-2xl p-4 text-[0.7rem] text-cream/70">
                 <Linkedin size={20} />
                 LinkedIn
               </a>
-              <a href="https://facebook.com/florenziooo" target="_blank" rel="noreferrer" className="flex flex-col items-center justify-center gap-2 bg-foreground/5 hover:bg-foreground/10 transition-colors rounded-2xl p-4 text-[0.7rem] text-cream/70">
+              <a href="https://facebook.com/florenzio.23/" target="_blank" rel="noreferrer" className="flex flex-col items-center justify-center gap-2 bg-foreground/5 hover:bg-foreground/10 transition-colors rounded-2xl p-4 text-[0.7rem] text-cream/70">
                 <Facebook size={20} />
                 Facebook
               </a>
@@ -122,10 +122,7 @@ export default function Contact() {
             <a href="/florenziooo-portfolio/resume.pdf" target="_blank" rel="noreferrer" className="flex items-center gap-2 px-6 py-3 bg-hot-pink text-primary-foreground rounded-full text-[0.7rem] font-bold tracking-widest uppercase hover:scale-105 transition-transform">
               RESUME <Download size={14} />
             </a>
-            <a href="mailto:frezkieflorenz@gmail.com" className="flex items-center gap-2 px-6 py-3 bg-foreground/5 border border-foreground/10 hover:border-foreground/20 text-cream rounded-full text-[0.7rem] font-bold tracking-widest uppercase transition-colors">
-              MESSAGE ME <Send size={14} />
-            </a>
-            <a href="mailto:frezkieflorenz@gmail.com" className="flex items-center gap-2 px-6 py-3 bg-foreground/5 border border-foreground/10 hover:border-foreground/20 text-cream rounded-full text-[0.7rem] font-bold tracking-widest uppercase transition-colors">
+            <a href="mailto:florenziooo23@gmail.com" className="flex items-center gap-2 px-6 py-3 bg-foreground/5 border border-foreground/10 hover:border-foreground/20 text-cream rounded-full text-[0.7rem] font-bold tracking-widest uppercase transition-colors">
               EMAIL ME <Mail size={14} />
             </a>
           </div>
