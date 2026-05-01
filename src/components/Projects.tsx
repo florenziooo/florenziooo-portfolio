@@ -114,7 +114,7 @@ export default function Projects() {
                 key={p.name}
                 data-aos="fade-up"
                 data-aos-duration="1550"
-                className={`relative w-[340px] flex-shrink-0 rounded-3xl bg-gradient-to-br ${p.gradient} border ${p.border} flex flex-col hover:-translate-y-3 hover:rotate-[-1deg] transition-transform duration-300 group overflow-hidden h-162`}
+                className={`relative w-[340px] flex-shrink-0 rounded-3xl bg-gradient-to-br ${p.gradient} border ${p.border} flex flex-col hover:-translate-y-3 hover:rotate-[-1deg] transition-transform duration-300 group overflow-hidden h-170`}
               >
                 {/* Photo Header */}
                 <div className="h-75 w-full relative shrink-0 bg-black/20 border-b border-white/5">
@@ -160,7 +160,7 @@ export default function Projects() {
                     <h3 className="font-display text-3xl text-cream tracking-wide mb-2 leading-none">
                       {p.name}
                     </h3>
-                    <p className="text-[0.75rem] text-cream/50 leading-relaxed max-h-[80px] overflow-hidden line-clamp-4">
+                    <p className="text-[0.75rem] text-cream/50 leading-relaxed max-h-[120px] overflow-hidden line-clamp-6">
                       {p.desc}
                     </p>
                   </div>

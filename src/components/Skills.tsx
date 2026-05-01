@@ -2,7 +2,7 @@ const categories = [
   {
     num: "01 —",
     name: "Languages",
-    desc: "C, C++, C#, Java, Kotlin, Python, JavaScript, TypeScript, PHP",
+    desc: "C, C++, C#, Java, Kotlin, Python, JavaScript, PHP",
     color: "bg-hot-pink",
   },
   {
@@ -14,13 +14,13 @@ const categories = [
   {
     num: "03 —",
     name: "Databases",
-    desc: "MySQL — schema design, queries, optimization",
+    desc: "MySQL schema design, queries",
     color: "bg-lime",
   },
   {
     num: "04 —",
     name: "Design & Collab",
-    desc: "Figma, Canva, Notion — from wireframes to shipped products",
+    desc: "Figma, Canva, Notion",
     color: "bg-sky-accent",
   },
   {

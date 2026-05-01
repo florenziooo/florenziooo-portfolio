@@ -27,7 +27,7 @@ export default function Hero() {
         </h1>
 
         <p data-aos="fade-up" data-aos-duration="1550" className="text-[1rem] text-cream/50 leading-relaxed max-w-lg mt-4 mb-6">
-          BS Computer Science student at CIT-U—aspiring to contribute in fields of AI, blockchain, and software design.
+          BS Computer Science student at CIT-U—aspiring to contribute in fields of AI and software engineering.
         </p>
 
         {/* Skill pills */}
